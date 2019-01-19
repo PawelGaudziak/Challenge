@@ -62,25 +62,21 @@
         <div class="intro">
             <form name="login" th:action="@{/login}" method= "post">
 
-                <div th:if="${param.error}"> <!-- "param" jest stąd z SecurityConfig: .failureUrl("/login?error=true") -->
-                    <div class="alert-danger">Email or password is invalid, please verify!!!</div>
-                </div>
-
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Email Address</label>
-                        <input type="email" name="email" class="form-control" placeholder="Email Address" id="email" />
+                        <label>Adres e-mail</label>
+                        <input type="email" name="email" class="form-control" placeholder="Adres e-mail" id="email" />
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Password</label>
-                        <input type="password" name="haslo" class="form-control" placeholder="Password" id="password"/>
+                        <label>Hasło</label>
+                        <input type="password" name="haslo" class="form-control" placeholder="Hasło" id="password"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="loginButton">Login</button>
+                    <button type="submit" class="btn btn-primary" id="loginButton">Zaloguj</button>
                 </div>
 
             </form>
