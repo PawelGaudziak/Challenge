@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Logowanie</title>
+    <title>Dodaj KPO</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -65,27 +65,39 @@
         <div class="intro">
             <form name="login" th:action="@{/login}" method= "post">
 
-
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Adres e-mail</label>
-                        <input type="email" name="email" class="form-control" placeholder="Adres e-mail" id="email" />
+                        <label>Data KPO</label>
+                        <input type="text" name="dataKpo" class="form-control" placeholder="Data KPO" id="dataKpo"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Hasło</label>
-                        <input type="password" name="haslo" class="form-control" placeholder="Hasło" id="password"/>
+                        <label>Kod odpadu</label>
+                        <input type="text" name="kodOdpadu" class="form-control" placeholder="Kod odpadu" id="kodOdpadu"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Masa KPO</label>
+                        <input type="text" name="masa" class="form-control" placeholder="Masa odpadu" id="masa" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>NIP dostawcy</label>
+                        <input type="text" name="nip" class="form-control" placeholder="NIP dostawcy" id="nip"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="loginButton">Zaloguj</button>
+                    <button type="submit" class="btn btn-primary" id="loginButton">Dodaj KPO</button>
                 </div>
 
             </form>
         </div>
     </div>
 </section>
+
 
 
 <footer class="footer text-faded text-center py-5">
