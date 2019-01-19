@@ -31,7 +31,7 @@ public class OdpadyService {
     }
 
     public List<Odpady> getAllOdpady(){
-        return odpadyRepository.findAll(Sort.by("date").descending());
+        return odpadyRepository.findAll(Sort.by("kod_odpadu").descending());
     }
 
     public Odpady getById(long id){
