@@ -24,6 +24,7 @@ public class Firmy {
 
 
     public Firmy() {
+        this.role = "user";
     }
 
     public Firmy(String nazwaFirmy, String nip, String email, String haslo, String role) {
