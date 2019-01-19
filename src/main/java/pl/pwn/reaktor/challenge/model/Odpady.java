@@ -1,6 +1,7 @@
 package pl.pwn.reaktor.challenge.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,7 @@ public class Odpady {
     private long id;
 
     @Column (name = "data_KPO")
-    private Date dataKpo;
+    private LocalDate dataKpo;
 
     @Column (name = "kod_odpadu")
     private String kodOdpadu;
@@ -24,14 +25,7 @@ public class Odpady {
     public Odpady() {
     }
 
-    public Odpady(Date dataKpo, String kodOdpadu, double masa, String nip) {
-        this.dataKpo = dataKpo;
-        this.kodOdpadu = kodOdpadu;
-        this.masa = masa;
-        this.nip = nip;
-    }
-
-    public Odpady(long id, Date dataKpo, String kodOdpadu, double masa, String nip) {
+    public Odpady(long id, LocalDate dataKpo, String kodOdpadu, double masa, String nip) {
         this.id = id;
         this.dataKpo = dataKpo;
         this.kodOdpadu = kodOdpadu;
@@ -47,11 +41,11 @@ public class Odpady {
         this.id = id;
     }
 
-    public Date getDataKpo() {
+    public LocalDate getDataKpo() {
         return dataKpo;
     }
 
-    public void setDataKpo(Date dataKpo) {
+    public void setDataKpo(LocalDate dataKpo) {
         this.dataKpo = dataKpo;
     }
 

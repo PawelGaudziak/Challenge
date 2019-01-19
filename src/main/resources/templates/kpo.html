@@ -53,7 +53,7 @@
                     <a class="nav-link text-uppercase text-expanded" href="/rejestracja">Rejestracja</a>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="/KPO">Dodaj KPO</a>
+                    <a class="nav-link text-uppercase text-expanded" href="/kpo">Dodaj KPO</a>
                 </li>
                 <li class="nav-item px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" href="/kontakt">Kontakt</a>
@@ -66,25 +66,30 @@
 <section class="page-section clearfix">
     <div class="container">
         <div class="intro">
-            <form name="login" th:action="@{/login}" method= "post">
+
+            <form th:action="@{/kpo}" method= "post" th:object="${kpo}">
 
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Kod odpadu</label>
-                        <input type="text" name="kodOdpadu" class="form-control" placeholder="Kod odpadu" id="kodOdpadu"/>
+                        <input  type="text" th:field="*{kodOdpadu}" class="form-control" placeholder="Kod odpadu" id="kodOdpadu"/>
+                        <p th:if="${#fields.hasErrors('kodOdpadu')}" th:errors="*{kodOdpadu}" class="help-block text-danger"></p>
+
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Masa KPO</label>
-                        <input type="text" name="masa" class="form-control" placeholder="Masa odpadu" id="masa" />
+                        <input  type="text" th:field="*{masa}" class="form-control" placeholder="Masa odpadu" id="masa"/>
+                        <p th:if="${#fields.hasErrors('masa')}" th:errors="*{masa}" class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>NIP dostawcy</label>
-                        <input type="text" name="nip" class="form-control" placeholder="NIP dostawcy" id="nip"/>
+                        <input th:field="*{nip}" type="text" class="form-control" placeholder="NIP" id="nip"/>
+                        <p th:if="${#fields.hasErrors('nip')}" th:errors="*{nip}" class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="form-group">
