@@ -6,4 +6,6 @@ import pl.pwn.reaktor.challenge.model.Odpady;
 
 @Repository
 public interface OdpadyRepository extends JpaRepository<Odpady, Long> {
+
+    Odpady findFirstByOrderByIdDesc();
 }
