@@ -21,7 +21,7 @@ public class OdpadyService {
     }
 
     //zapis do bazy danych przy użyciu odpadyRepository
-    public Odpady addOdpady(Odpady odpady){
+    public Odpady dodajOdpady(Odpady odpady){
         odpady.setDataKpo(new Date());
         return odpadyRepository.save(odpady);
     }

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dodaj KPO</title>
+    <title>skontaktuj się z nami</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 
 <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper text-primary mb-3"></span>
-    <span class="site-heading-lower">Ewidencja odpadów</span>
+    <span class="site-heading-lower">Kontakt</span>
 </h1>
 
 <!-- Navigation -->
@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="about.html">O nas</a>
+                    <a class="nav-link text-uppercase text-expanded" href="/about">O nas</a>
                 </li>
                 <li class="nav-item px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" href="/login">Logowanie</a>
@@ -68,27 +68,32 @@
         <div class="intro">
             <form name="login" th:action="@{/login}" method= "post">
 
-
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Kod odpadu</label>
-                        <input type="text" name="kodOdpadu" class="form-control" placeholder="Kod odpadu" id="kodOdpadu"/>
+                        <label>Imię</label>
+                        <input type="text" name="telefon" class="form-control" placeholder="Numer telefonu" id="imie"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Masa KPO</label>
-                        <input type="text" name="masa" class="form-control" placeholder="Masa odpadu" id="masa" />
+                        <label>Telefon</label>
+                        <input type="text" name="telefon" class="form-control" placeholder="Telefon" id="telefon"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>NIP dostawcy</label>
-                        <input type="text" name="nip" class="form-control" placeholder="NIP dostawcy" id="nip"/>
+                        <label>Adres email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Adres e-mail" id="email" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Wiadomość</label>
+                        <input type="text" name="wiadomosc" class="form-control" placeholder="Tu wpisz swoją wiadomość" id="wiadomosc"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="loginButton">Dodaj KPO</button>
+                    <button type="submit" class="btn btn-primary" id="loginButton">Zarejestruj</button>
                 </div>
 
             </form>
