@@ -19,23 +19,29 @@ public class Firmy {
 
     private String haslo;
 
+    private String role;
+
 
     public Firmy() {
     }
 
-    public Firmy(String nazwaFirmy, String nip, String email, String haslo) {
+    public Firmy(String nazwaFirmy, String nip, String email, String haslo, String role) {
         this.nazwaFirmy = nazwaFirmy;
         this.nip = nip;
         this.email = email;
         this.haslo = haslo;
+        this.role = "user";
     }
 
-    public Firmy(long id, String nazwaFirmy, String nip, String email, String haslo) {
+    public Firmy(long id, String nazwaFirmy, String nip, String email, String haslo,
+                 String role) {
         this.id = id;
         this.nazwaFirmy = nazwaFirmy;
         this.nip = nip;
         this.email = email;
         this.haslo = haslo;
+        this.role = "user";
+
     }
 
     public long getId() {
@@ -86,6 +92,7 @@ public class Firmy {
                 ", nip='" + nip + '\'' +
                 ", email='" + email + '\'' +
                 ", haslo='" + haslo + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }
