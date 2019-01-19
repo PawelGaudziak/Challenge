@@ -19,7 +19,6 @@ public class FirmyController {
 
     }
 
-
     @GetMapping("/odpady")
     public String odpady(){
         return "odpady";
