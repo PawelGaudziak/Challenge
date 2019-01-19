@@ -25,7 +25,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
 
                 // sprawdzenie i pobranie loginu i hasła oraz czy jest aktywny po adresie email który jest loginem
-                .usersByUsernameQuery("SELECT email, haslo FROM firmy WHERE email=?") // taka kolejność parametrów, jeśli w bazie nie mamy "active", to na sztywno trzeba by wpisać "1"
+                .usersByUsernameQuery("SELECT email, haslo, 1 FROM firmy WHERE email=?") // taka kolejność parametrów, jeśli w bazie nie mamy "active", to na sztywno trzeba by wpisać "1"
+                .authoritiesByUsernameQuery("SELECT f.email, f.role FROM firmy f  WHERE f.email=?")
 
                 //ustawienie klasy odpowiedzialnej za nawiązanie połączenia z bazą dancyh
                 .dataSource(dataSource)
