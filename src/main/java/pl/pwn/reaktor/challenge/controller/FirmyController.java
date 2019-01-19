@@ -8,13 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class FirmyController {
 
 
-    @GetMapping("/home")
+    @GetMapping("/index")
     public String index(){
         return "index";
     }
 
-    @GetMapping("/odpady")
-    public String odpady(){
-        return "odpady";
-    }
+
 }
