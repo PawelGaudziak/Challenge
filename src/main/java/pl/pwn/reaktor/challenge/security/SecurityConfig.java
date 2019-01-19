@@ -48,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")// adres strony z naszym formularzem logowania
-                .defaultSuccessUrl("/") // domyślne przekierowanie po poprawnym zalogowaniu
+                .defaultSuccessUrl("/dane") // domyślne przekierowanie po poprawnym zalogowaniu
                 .failureUrl("/login?error=true") // adres agy jest błąd logowania
                 .usernameParameter("email")
                 .passwordParameter("haslo")
