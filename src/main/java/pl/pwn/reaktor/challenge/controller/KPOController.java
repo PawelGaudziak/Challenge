@@ -1,5 +1,6 @@
 package pl.pwn.reaktor.challenge.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,20 +23,22 @@ public class KPOController {
         this.odpadyService = odpadyService;
     }
 
-    @GetMapping("/KPO")
-    public String index(){
+    @GetMapping("/kpo")
+    public String index(Model model){
+
+        model.addAttribute("kpo", new Odpady());
         return "kpo";
     }
 
-    @PostMapping("/KPO")
+    @PostMapping("/kpo")
     public String dodajOdpady(@Valid @ModelAttribute Odpady odpady, BindingResult bindingResult, Model model) {
 
         if (bindingResult.hasErrors()) { //sprawdzamy czy formularz jest prawidłowo wypełniony
-            return "/KPO";
+            return "/kpo";
         }
 
         Odpady zapisaneOdpady = odpadyService.dodajOdpady(odpady); //dodanie KPO do bazy danych przez serwis i repository
-        model.addAttribute("odpady", zapisaneOdpady); // dodanie zapisanego KPO do modelu w celu wyświetlenia go na stronie single.html
-        return "KPO";
+        model.addAttribute("kpo", zapisaneOdpady); // dodanie zapisanego KPO do modelu w celu wyświetlenia go na stronie single.html
+        return "/kpo";
     }
 }

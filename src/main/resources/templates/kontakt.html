@@ -53,7 +53,7 @@
                     <a class="nav-link text-uppercase text-expanded" href="/rejestracja">Rejestracja</a>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="/KPO">Dodaj KPO</a>
+                    <a class="nav-link text-uppercase text-expanded" href="/kpo">Dodaj KPO</a>
                 </li>
                 <li class="nav-item px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" href="/kontakt">Kontakt</a>
@@ -66,7 +66,8 @@
 <section class="page-section clearfix">
     <div class="container">
         <div class="intro">
-            <form name="login" th:action="@{/login}" method= "post">
+
+            <form name="wiadomosc" th:action="@{/kontakt}" method="post" th:object="${contact}">
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
