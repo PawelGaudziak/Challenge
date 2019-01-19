@@ -77,7 +77,32 @@
                         <span class="section-heading-upper">Dane zalogowanej firmy</span>
                         <span class="section-heading-lower"></span>
                     </h2>
-                    <p class="mb-0">Tu będą dane</p>
+
+                    <div class="form-group">
+                        <label>Id</label>
+                        <span th:text="${firmy.id}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nazwa</label>
+                        <span th:text="${firmy.nazwaFirmy}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>NIP</label>
+                        <span th:text="${firmy.nip}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <span th:text="${firmy.email}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rola</label>
+                        <span th:text="${firmy.role}"/>
+                    </div>
+
                 </div>
             </div>
         </div>

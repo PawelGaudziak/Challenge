@@ -27,5 +27,10 @@ BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         return saveFrima;
     }
 
+    public Firmy findFirma(String email) {
+        return firmyRepository.findOneByEmail(email);
+
+    }
+
 
 }
