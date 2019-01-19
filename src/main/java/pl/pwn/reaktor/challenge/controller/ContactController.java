@@ -22,22 +22,22 @@ public class ContactController {
         this.emailService = emailService;
     }
 
-    @GetMapping("/contact")
+    @GetMapping("/kontakt")
     public String contact(Model model) {
 
         Contact contact = new Contact();
-        model.addAttribute("contact", contact);
-        return "contact";
+        model.addAttribute("kontakt", contact);
+        return "kontakt";
     }
 
     @PostMapping("/sentMessage")
     public String sent(@Valid @ModelAttribute Contact contact, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "contact";
+            return "kontakt";
         }
 
         emailService.sendMessage(contact);
-        model.addAttribute("contact", new Contact());
-        return "contact";
+        model.addAttribute("kontakt", new Contact());
+        return "kontakt";
     }
 }
