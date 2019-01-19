@@ -13,12 +13,6 @@ public class FirmyController {
         return "index";
     }
 
-    @GetMapping("/rejestracja")
-    public String rejestracja(){
-        return "rejestracja";
-
-    }
-
     @GetMapping("/odpady")
     public String odpady(){
         return "odpady";
