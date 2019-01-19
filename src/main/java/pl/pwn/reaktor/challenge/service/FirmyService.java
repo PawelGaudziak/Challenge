@@ -23,7 +23,7 @@ public class FirmyService {
         this.firmyRepository = firmyRepository;
     }
 
-    public Firmy addFrima(Firmy firma) {
+    public Firmy addFirma(Firmy firma) {
         Firmy saveFrima = firmyRepository.save(firma);
         return saveFrima;
     }

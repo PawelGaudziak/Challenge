@@ -1,6 +1,7 @@
 package pl.pwn.reaktor.challenge.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -9,16 +10,16 @@ public class Firmy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
+//    @NotBlank
     @Column (name = "nazwa_firmy")
     private String nazwaFirmy;
-
+//    @NotBlank
     private String nip;
-
+//    @NotBlank
     private String email;
-
+//    @NotBlank
     private String haslo;
-
+//    @NotBlank
     private String role;
 
 
