@@ -8,6 +8,7 @@ import pl.pwn.reaktor.challenge.model.Odpady;
 import pl.pwn.reaktor.challenge.repository.OdpadyRepository;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 
 @Service
@@ -22,7 +23,8 @@ public class OdpadyService {
 
     //zapis do bazy danych przy użyciu odpadyRepository
     public Odpady dodajOdpady(Odpady odpady){
-        odpady.setDataKpo(LocalDate.now());
+
+        odpady.setDataKpo(LocalDate.now(ZoneId.of("Europe/Warsaw")));
         return odpadyRepository.save(odpady);
     }
 

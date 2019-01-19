@@ -13,5 +13,10 @@ public class FirmyController {
         return "index";
     }
 
+    @GetMapping("/dane")
+    public String dane(){
+        return "dane";
+    }
+
 
 }
