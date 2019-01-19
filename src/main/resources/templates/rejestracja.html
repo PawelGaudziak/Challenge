@@ -60,30 +60,38 @@
 <section class="page-section clearfix">
     <div class="container">
         <div class="intro">
-            <form name="login" th:action="@{/login}" method= "post">
+
+            <form  th:action="@{/rejestracja}" method= "post" th:object="${firmy}">
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Nazwa firmy</label>
-                        <input type="text" name="nazwaFirmy" class="form-control" placeholder="Nazwa firmy" id="nazwaFirmy"/>
+                        <input  type="text" th:field="*{nazwaFirmy}" class="form-control" placeholder="Nazwa firmy" id="nazwaFirmy"/>
+                        <p th:if="${#fields.hasErrors('nazwaFirmy')}" th:errors="*{nazwaFirmy}" class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>NIP</label>
-                        <input type="text" name="nip" class="form-control" placeholder="NIP" id="nip"/>
+                        <input th:field="*{nip}" type="text" class="form-control" placeholder="NIP" id="nip"/>
+                        <p th:if="${#fields.hasErrors('nip')}" th:errors="*{nip}" class="help-block text-danger"></p>
+
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Adres email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Adres e-mail" id="email" />
+                        <input th:field="*{email}" type="email" class="form-control" placeholder="Adres e-mail" id="email" />
+                        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="help-block text-danger"></p>
+
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Hasło</label>
-                        <input type="password" name="haslo" class="form-control" placeholder="Password" id="password"/>
+                        <input th:field="*{haslo}" type="password"  class="form-control" placeholder="Password" id="password"/>
+                        <p th:if="${#fields.hasErrors('haslo')}" th:errors="*{haslo}" class="help-block text-danger"></p>
+
                     </div>
                 </div>
                 <div class="form-group">
