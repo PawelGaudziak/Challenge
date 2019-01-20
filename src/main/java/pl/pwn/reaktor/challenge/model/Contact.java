@@ -16,10 +16,10 @@ public class Contact {
     @Email(message = "{email.notempty}")
     private String email;
     @Pattern(regexp = "\\d*$", message = "{contact.phone.pattern}")
-    private  String phone;
+    private String phone;
     @NotEmpty(message="{contact.notempty}")
     @Length(min=10, max=250, message="{contact.message.length}")
-    private  String message;
+    private String message;
 
     public Contact() {
     }
