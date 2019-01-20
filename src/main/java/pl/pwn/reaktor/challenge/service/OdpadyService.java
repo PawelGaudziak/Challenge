@@ -22,21 +22,15 @@ public class OdpadyService {
     }
 
     //zapis do bazy danych przy użyciu odpadyRepository
-    public Odpady dodajOdpady(Odpady odpady){
+    public Odpady dodajOdpady(Odpady odpady) {
 
         odpady.setDataKpo(LocalDate.now(ZoneId.of("Europe/Warsaw")));
         return odpadyRepository.save(odpady);
     }
 
-    public Odpady getLastOdpady(){
-        return odpadyRepository.findFirstByOrderByIdDesc();
-    }
+    public Double sumujOdpady() {
 
-    public List<Odpady> getAllOdpady(){
-        return odpadyRepository.findAll(Sort.by("kod_odpadu").descending());
-    }
+        return odpadyRepository.sumujOdpady();
 
-    public Odpady getById(long id){
-        return odpadyRepository.getOne(id);
     }
 }
