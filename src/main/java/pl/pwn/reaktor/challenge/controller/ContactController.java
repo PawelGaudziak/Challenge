@@ -30,7 +30,7 @@ public class ContactController {
         return "kontakt";
     }
 
-    @PostMapping("/sentMessage")
+    @PostMapping("/kontakt")
     public String sent(@Valid @ModelAttribute Contact contact, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "kontakt";

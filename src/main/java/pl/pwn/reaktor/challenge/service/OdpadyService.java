@@ -24,7 +24,7 @@ public class OdpadyService {
     //zapis do bazy danych przy użyciu odpadyRepository
     public Odpady dodajOdpady(Odpady odpady) {
 
-        odpady.setDataKpo(LocalDate.now(ZoneId.of("Europe/Warsaw")));
+        odpady.setDataKpo(LocalDate.now(ZoneId.systemDefault()));
         return odpadyRepository.save(odpady);
     }
 

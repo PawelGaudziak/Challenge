@@ -50,8 +50,8 @@ public class FirmyController {
     public String dane(Model model, Authentication auth){
         UserDetails userDetails = (UserDetails) auth.getPrincipal();
         String email = userDetails.getUsername();
-        System.out.println(email);
-        // odczyt danych po emial
+
+        // odczyt danych po email
         Firmy firmy = firmyService.findFirma(email);
         model.addAttribute(firmy);
         return "dane";
