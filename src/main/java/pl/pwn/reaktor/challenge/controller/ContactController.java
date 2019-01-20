@@ -15,7 +15,9 @@ import javax.validation.Valid;
 
 @Controller
 public class ContactController {
+
     private EmailService emailService;
+
 
     @Autowired
     public ContactController(EmailService emailService) {
@@ -26,7 +28,7 @@ public class ContactController {
     public String contact(Model model) {
 
         Contact contact = new Contact();
-        model.addAttribute("kontakt", contact);
+        model.addAttribute("contact", contact);
         return "kontakt";
     }
 
@@ -36,8 +38,8 @@ public class ContactController {
             return "kontakt";
         }
 
-        emailService.sendMessage(contact);
-        model.addAttribute("kontakt", new Contact());
+        emailService.sentMessage(contact);
+        model.addAttribute("contact", new Contact());
         return "kontakt";
     }
 }

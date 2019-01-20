@@ -66,34 +66,39 @@
     </div>
 </nav>
 
+
 <section class="page-section clearfix">
     <div class="container">
         <div class="intro">
 
-            <form name="wiadomosc" th:action="@{/kontakt}" method="post" th:object="${contact}">
+            <form name="sentMessage" th:action="@{/sentMessage}" method="post" th:object="${contact}" id="contactForm">
 
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Imię</label>
-                        <input type="text" name="Imię" class="form-control" placeholder="Imię" id="name"/>
+                        <input th:field="*{name}" type="text" class="form-control" placeholder="Imię" id="name"/>
+                        <p th:if="${#fields.hasErrors('name')}"th:errors="*{name}" class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Telefon</label>
-                        <input type="text" name="telefon" class="form-control" placeholder="Telefon" id="phone"/>
+                        <input  th:field="*{phone}" type="text" class="form-control" placeholder="Telefon" id="phone"/>
+                        <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Adres email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Adres e-mail" id="email" />
+                        <input  th:field="*{email}" type="email" class="form-control" placeholder="Adres e-mail" id="email" />
+                        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Wiadomość</label>
-                        <input type="text" name="wiadomosc" class="form-control" placeholder="Tu wpisz swoją wiadomość" id="message"/>
+                        <textarea th:field = "*{message}" rows="5" class="form-control" placeholder="Wiadomość" id="message" ></textarea>
+                        <p th:if="${#fields.hasErrors('message')}" th:errors="*{message}"class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="form-group">

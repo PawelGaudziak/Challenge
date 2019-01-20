@@ -18,7 +18,8 @@ public class EmailService {
     @Autowired
     public JavaMailSender mailSender;
 
-    public void sendMessage(Contact contact) {
+    public void sentMessage(Contact contact) {
+        System.out.println("Email");
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(TO);
         message.setSubject(SUBJECT);
