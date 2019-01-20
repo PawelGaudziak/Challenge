@@ -31,6 +31,10 @@ public class OdpadyService {
     public Double sumujOdpady() {
 
         return odpadyRepository.sumujOdpady();
+    }
 
+    public List<Odpady> getAllKPO(){
+        List<Odpady> odpady =  odpadyRepository.findAll(Sort.by(Sort.Order.desc("nip")));
+        return odpady;
     }
 }
