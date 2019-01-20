@@ -37,4 +37,9 @@ public class OdpadyService {
         List<Odpady> odpady =  odpadyRepository.findAll(Sort.by(Sort.Order.desc("nip")));
         return odpady;
     }
+
+    public List<Odpady> findAllByNip(String nip){
+        List<Odpady> odpadyByNip =  odpadyRepository.findAllByNip(nip);
+        return odpadyByNip;
+    }
 }

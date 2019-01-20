@@ -63,9 +63,9 @@
               </li>
               <li th:action = "@{/logout}" method="post">
             <li class="nav-item px-lg-4">
-            <p th:action = "@{/logout}" method="post">
-              <a class="nav-link text-uppercase text-expanded" href="/index">Logout</a>
-            </li>
+            <form th:action="@{/logout}" method="post">
+              <button class="nav-link" type="submit" value="Logout">Logout</button>
+            </form>
               </li>
             </li>
           </ul>

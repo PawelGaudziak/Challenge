@@ -11,4 +11,10 @@ public class LoginController {
     public String logowanie(){
         return "logowanie";
     }
+
+//    @GetMapping("/logout")
+//    public String logout(){
+//        return "redirect:/";
+//    }
+
 }

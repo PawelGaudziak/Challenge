@@ -9,4 +9,6 @@ public interface FirmyRepository extends JpaRepository<Firmy, Long> {
 
     Firmy findOneByEmail(String email);
 
+    Firmy findOneByNip(String nip);
+
 }

@@ -7,20 +7,26 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import pl.pwn.reaktor.challenge.model.Firmy;
 import pl.pwn.reaktor.challenge.model.Odpady;
+import pl.pwn.reaktor.challenge.service.FirmyService;
 import pl.pwn.reaktor.challenge.service.OdpadyService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class KPOController {
 
     private OdpadyService odpadyService;
+    private FirmyService firmyService;
 
     @Autowired
-    public KPOController(OdpadyService odpadyService) {
+    public KPOController(OdpadyService odpadyService, FirmyService firmyService) {
         this.odpadyService = odpadyService;
+        this.firmyService = firmyService;
     }
 
     @GetMapping("/kpo")
@@ -32,6 +38,15 @@ public class KPOController {
 
     @GetMapping("/usunKPO")
     public String usunKPO() {
+
+        return "/usunKPO";
+    }
+
+    @GetMapping("/usunKPO/{nip}")
+    public String view(@PathVariable(name = "nip") String nip, Model model) {
+
+    List<Odpady> odpadyByNip = odpadyService.findAllByNip(nip);
+    model.addAttribute("odpady", odpadyByNip);
 
         return "/usunKPO";
     }

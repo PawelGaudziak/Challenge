@@ -61,10 +61,9 @@
                 <li class="nav-item px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" href="/kontakt">Kontakt</a>
                 </li>
-                <li class="nav-item px-lg-4">
-                    <p th:action = "@{/logout}" method="post">
-                        <a class="nav-link text-uppercase text-expanded" href="/index">Logout</a>
-                </li>
+                <form th:action="@{/logout}" method="post">
+                    <button class="nav-link" type="submit" value="Logout">Logout</button>
+                </form>
             </ul>
         </div>
     </div>
@@ -76,7 +75,7 @@
 
             <div class="col-lg-8 col-md-10 mx-auto">
 
-                <div th:if="${#lists.isEmpty(odpady)}">Lista Odpadów jest pusta</div>
+                <div class="section-heading-upper" th:if="${#lists.isEmpty(odpady)}">Lista Odpadów jest pusta</div>
 
                 <div th:if="${not #lists.isEmpty(odpady)}">
 
@@ -90,21 +89,19 @@
                             <th>Delete</th>
                         </tr>
                         <tr th:each="odpady:${odpady}">
-                            <td th:text="${kpo.id}"/>
-                            <td th:text="${kpo.dataKpo}"/>
-                            <td th:text="${kpo.kodOdpadu}"/>
-                            <td th:text="${kpo.masa}"/>
-                            <td th:text="${kpo.nip}"/>
-                            <td th:text="${kpo.nip}"/>
-                            <td><a th:href="${'/kpo/delete/'+kpo.nip}">Delete</a></td>
+                            <td th:text="${odpady.id}"/>
+                            <td th:text="${odpady.dataKpo}"/>
+                            <td th:text="${odapdy.kodOdpadu}"/>
+                            <td th:text="${odapdy.masa}"/>
+                            <td th:text="${odpady.nip}"/>
+                            <td><a th:href="${'/kpo/delete/'+odpady.nip}">Delete</a></td>
 
                         </tr>
 
                     </table>
 
                 </div>
-
-
+            </div>
         </div>
     </div>
 </section>

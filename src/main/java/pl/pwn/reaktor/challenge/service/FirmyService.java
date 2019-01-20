@@ -32,5 +32,10 @@ BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     }
 
+    public Firmy findOneByNip(String nip) {
+        return firmyRepository.findOneByNip(nip);
+
+    }
+
 
 }

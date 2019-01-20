@@ -10,7 +10,9 @@ import java.util.List;
 @Repository
 public interface OdpadyRepository extends JpaRepository<Odpady, Long> {
 
-    Odpady findFirstByOrderByIdDesc();
+    List<Odpady> findAll();
+
+    List<Odpady> findAllByNip(String nip);
 
     @Query(nativeQuery=true, value = "SELECT SUM(masa) FROM odpady")
     double sumujOdpady();
