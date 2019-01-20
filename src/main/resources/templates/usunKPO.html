@@ -74,7 +74,35 @@
     <div class="container">
         <div class="intro">
 
+            <div class="col-lg-8 col-md-10 mx-auto">
 
+                <div th:if="${#lists.isEmpty(odpady)}">Lista Odpadów jest pusta</div>
+
+                <div th:if="${not #lists.isEmpty(odpady)}">
+
+                    <table class="table table-striped">
+                        <tr>
+                            <th>id</th>
+                            <th>dataKpo</th>
+                            <th>kodOdpadu</th>
+                            <th>masa</th>
+                            <th>nip</th>
+                            <th>Delete</th>
+                        </tr>
+                        <tr th:each="odpady:${odpady}">
+                            <td th:text="${kpo.id}"/>
+                            <td th:text="${kpo.dataKpo}"/>
+                            <td th:text="${kpo.kodOdpadu}"/>
+                            <td th:text="${kpo.masa}"/>
+                            <td th:text="${kpo.nip}"/>
+                            <td th:text="${kpo.nip}"/>
+                            <td><a th:href="${'/kpo/delete/'+kpo.nip}">Delete</a></td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
 
 
         </div>
