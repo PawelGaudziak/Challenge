@@ -43,6 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // dostęp do adresów ... będzie miał tylko użytkownik o roli "user"
                 .antMatchers("/kpo").hasAuthority("user")
                 .antMatchers("/dane").hasAuthority("user")
+                .antMatchers("/usunKPO").hasAuthority("user")
                 // poniższe linki (adresy url) są dostępne dla wszystkich zalogowanych bez względu na rolę
                 //.antMatchers("/article/*", "/article").authenticated()
                 .anyRequest().permitAll()

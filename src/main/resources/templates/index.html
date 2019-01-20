@@ -56,6 +56,9 @@
               <a class="nav-link text-uppercase text-expanded" href="/kpo">Dodaj KPO</a>
             </li>
               <li class="nav-item px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="/usunKPO">Usuń KPO</a>
+              </li>
+              <li class="nav-item px-lg-4">
                   <a class="nav-link text-uppercase text-expanded" href="/kontakt">Kontakt</a>
               </li>
               <li th:action = "@{/logout}" method="post">
@@ -76,11 +79,11 @@
                 <div class="col-xl-9 mx-auto">
                     <div class="cta-inner text-center rounded">
                         <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Nasze usługi</span>
-                            <span class="section-heading-lower"></span>
+                            <span class="section-heading-upper">Aktualna suma KPO wg masy odpadów</span>
+                            <span class="section-heading-lower" ></span>
                         </h2>
-                        <p class="mb-0">To jest strona do ewidencji odpadów</p>
-                    </div>
+                        <p class="mb-0" th:text="${masa}">kg</p>
+                     </div>
                 </div>
             </div>
         </div>

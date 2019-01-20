@@ -30,6 +30,12 @@ public class KPOController {
         return "kpo";
     }
 
+    @GetMapping("/usunKPO")
+    public String usunKPO() {
+        
+        return "/usunKPO";
+    }
+
     @PostMapping("/kpo")
     public String dodajOdpady(@Valid @ModelAttribute Odpady odpady, BindingResult bindingResult, Model model) {
 
